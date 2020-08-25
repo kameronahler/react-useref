@@ -1,13 +1,16 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import ChangeName from '../ChangeName/ChangeName'
 export default function App() {
   const [name, setName] = useState('User')
   const renderCount = useRef(1)
   const changeNameRef = useRef()
 
+  useEffect(() => {
+    renderCount.current = renderCount.current + 1
+  })
+
   const onBlur = (e) => {
     setName(e.target.value)
-    renderCount.current = renderCount.current + 1
   }
 
   const focusInput = () => {
