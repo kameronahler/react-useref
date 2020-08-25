@@ -27,7 +27,9 @@ export default function App() {
         </button>
       </h1>
       <ChangeName onBlur={onBlur} ref={changeNameRef} />
-      <p>{`Rendered ${renderCount.current} times`}</p>
+      <p>{`Rendered ${renderCount.current} ${
+        renderCount.current > 1 ? 'times' : 'time'
+      }`}</p>
     </div>
   )
 }
