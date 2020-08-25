@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 
-export default function ChangeName({ onBlur }) {
+const ChangeName = ({ onBlur }, ref) => {
   return (
     <div>
       <label htmlFor='name-input'>Name</label>
       <input
-        defaultValue={''}
+        defaultValue={'User'}
         id={'name-input'}
         onBlur={onBlur}
         placeholder={'User'}
+        ref={ref}
         type='text'
       />
     </div>
   )
 }
+
+export default forwardRef(ChangeName)
