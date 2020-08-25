@@ -20,9 +20,8 @@ export default function App() {
   return (
     <div>
       <h1>
-        <span>Hello, </span>
-        <span>{name}</span>
-        <button onClick={focusInput}>
+        <span>{`Hello, ${name}`}</span>
+        <button aria-label={'Edit name'} onClick={focusInput}>
           <i className='material-icons'>edit</i>
         </button>
       </h1>
