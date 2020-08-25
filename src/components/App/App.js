@@ -6,7 +6,8 @@ export default function App() {
   const changeNameRef = useRef()
 
   const onBlur = (e) => {
-    setName(e.currentTarget.value)
+    setName(e.target.value)
+    renderCount.current = renderCount.current + 1
   }
 
   const focusInput = () => {
@@ -17,10 +18,13 @@ export default function App() {
     <div>
       <h1>
         <span>Hello, </span>
-        <span onClick={focusInput}>{name}</span>
+        <span>{name}</span>
+        <button onClick={focusInput}>
+          <i className='material-icons'>edit</i>
+        </button>
       </h1>
       <ChangeName onBlur={onBlur} ref={changeNameRef} />
-      <p>{`Focused ${renderCount.current} times`}</p>
+      <p>{`Rendered ${renderCount.current} times`}</p>
     </div>
   )
 }
